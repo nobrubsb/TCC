@@ -5,8 +5,8 @@ public class DirecaoTiro : MonoBehaviour {
 
     ArrastaBola bola;
 
-
     SpriteRenderer desenharSeta;
+    float angulo;
 
     private void Awake()
     {
@@ -16,10 +16,11 @@ public class DirecaoTiro : MonoBehaviour {
 
     void Start () {
 
-        bola = new ArrastaBola();        
+        bola = new ArrastaBola();
+        
 
         desenharSeta.enabled = false;
-
+        angulo = 90.0f;
 	}
 	
 	// Update is called once per frame
@@ -28,6 +29,8 @@ public class DirecaoTiro : MonoBehaviour {
         if(bola.toque == true) {
 
             desenharSeta.enabled = true;
+            angulo++;
+            this.transform.Rotate(this.transform.position, angulo);
         }
 
 	}
