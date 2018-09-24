@@ -74,6 +74,7 @@
     <Compile Include="Assets\Classes\Mola.cs" />
     <Compile Include="Assets\Scripts\ArrastaBola.cs" />
     <Compile Include="Assets\Scripts\DirecaoTiro.cs" />
+    <Compile Include="Assets\Scripts\Direcional.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

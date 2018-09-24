@@ -99,8 +99,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 59181734}
   - 212: {fileID: 59181735}
+  - 50: {fileID: 59181736}
+  - 114: {fileID: 59181737}
   m_Layer: 0
-  m_Name: seta
+  m_Name: Direcional
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -113,12 +115,12 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 59181733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.0499997, y: 0.060000002, z: 0}
-  m_LocalScale: {x: 0.1403012, y: 0.14030124, z: 0.14030124}
+  m_LocalPosition: {x: 21.738941, y: 0.4276513, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 2012047807}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!212 &59181735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -152,29 +154,13 @@ SpriteRenderer:
   m_Color: {r: 0.9058824, g: 0.023529414, b: 0.023529414, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!1 &466809475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 466809477}
-  - 50: {fileID: 466809476}
-  m_Layer: 0
-  m_Name: Ancora
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!50 &466809476
+--- !u!50 &59181736
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466809475}
+  m_GameObject: {fileID: 59181733}
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -185,19 +171,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!4 &466809477
-Transform:
+--- !u!114 &59181737
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 466809475}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_GameObject: {fileID: 59181733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61aec371ccb7234f8e2bdc26243b05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &785281960
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,7 +587,7 @@ GameObject:
   - 4: {fileID: 1813384036}
   - 212: {fileID: 1813384035}
   m_Layer: 0
-  m_Name: campo
+  m_Name: Campo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -770,14 +754,14 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 224: {fileID: 2012047807}
+  - 4: {fileID: 2012047807}
   - 212: {fileID: 2012047806}
   - 50: {fileID: 2012047810}
   - 58: {fileID: 2012047809}
   - 114: {fileID: 2012047808}
   - 231: {fileID: 2012047811}
   m_Layer: 0
-  m_Name: bola
+  m_Name: Bola
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -816,25 +800,19 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
---- !u!224 &2012047807
-RectTransform:
+--- !u!4 &2012047807
+Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012047805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 7.1275225, y: 7.127521, z: 7.127521}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children:
-  - {fileID: 59181734}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 3, y: 3}
-  m_Pivot: {x: 0, y: 0}
+  m_RootOrder: 2
 --- !u!114 &2012047808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,7 +826,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toque: 0
   barraForca: {fileID: 785281962}
-  seta: {fileID: 0}
 --- !u!58 &2012047809
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -889,14 +866,14 @@ SpringJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 466809476}
+  m_ConnectedRigidBody: {fileID: 59181736}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0.1000061}
   m_AutoConfigureDistance: 1
-  m_Distance: 0.1000061
+  m_Distance: 21.745344
   m_DampingRatio: 0
   m_Frequency: 1
 --- !u!1 &2076816577

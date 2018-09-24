@@ -19,31 +19,15 @@ public class ArrastaBola : MonoBehaviour {
     public Slider barraForca;
     public float velocidadeMaxima {get; set;}
 
-    //Variáveis responsáveis por direcionar o sprite
-    Ray raioParaMouse;
-    SpringJoint2D mola;
-    Transform ancora;
-    float esticadaMaximaQuadrado;
-
-    public SpriteRenderer seta;
-    
-
     private void Awake()
     {
-        //Inicialização dos objetos antes de tudo
-        corpoFisico = GetComponent<Rigidbody2D>();
-        mola = GetComponent<SpringJoint2D>();
-        seta = GetComponent<SpriteRenderer>();
-        
+       
     }
 
     
     void Start() {
 
-        objetoCorpo = new Corpo();
-        objetoCorpo.rigidBody = corpoFisico;
-        objetoCorpo.mola = mola;
-        objetoCorpo.ancora = ancora;
+     
 
         //Controle da barra de força
         forcaMaxima = 1.0f;
@@ -51,14 +35,6 @@ public class ArrastaBola : MonoBehaviour {
         forcaAtual = 0.0f;
         velocidadeMaxima = 30.0f;
 
-        //Objeto ancora conecta com a mola do objeto;
-        objetoCorpo.ancora = objetoCorpo.mola.connectedBody.transform;
-        raioParaMouse = new Ray(objetoCorpo.ancora.position, Vector2.zero);
-
-        //Valor maximo para esticada
-        esticadaMaximaQuadrado = valorVelocidadeLancamento() * valorVelocidadeLancamento();
-
-        seta.enabled = false;
         
     }
 
@@ -67,7 +43,7 @@ public class ArrastaBola : MonoBehaviour {
 	
         if(toque == true)
         {
-            ArrastarCorpo();
+            //ArrastarCorpo();
             verificaForca();
         }
         
@@ -77,7 +53,6 @@ public class ArrastaBola : MonoBehaviour {
     {
         toque = true;
         Debug.Log("Tocou!");
-        seta.enabled = true;
         
     }
     private void OnMouseUp()
@@ -85,34 +60,8 @@ public class ArrastaBola : MonoBehaviour {
 
         toque = false;
         Debug.Log("Soltou");
-        seta.enabled = false;
         print(valorVelocidadeLancamento());
         
-    }
-
-    void ArrastarCorpo()
-    {
-        Vector3 mouseParaMundo = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        //Movimenta a bola na tela em todas as posições
-        //objetoCorpo.posX = mouseParaMundo.x;
-        //objetoCorpo.posY = mouseParaMundo.y;
-        //objetoCorpo.posZ = mouseParaMundo.z;
-        //Vector3 posicaoObjeto = new Vector3(objetoCorpo.posX, objetoCorpo.posY, objetoCorpo.posZ + 11.0f);
-        //transform.position = posicaoObjeto;
-
-
-        //
-        Vector2 ancoraParaMouse = mouseParaMundo - objetoCorpo.ancora.position;
-
-        
-        if (ancoraParaMouse.sqrMagnitude > esticadaMaximaQuadrado)
-        {
-            raioParaMouse.direction = ancoraParaMouse;
-            mouseParaMundo = raioParaMouse.GetPoint(valorVelocidadeLancamento());
-        }
-
-
     }
 
     void verificaForca()
@@ -130,5 +79,8 @@ public class ArrastaBola : MonoBehaviour {
         float velocidadeLancamento = forcaAtual * velocidadeMaxima; ;
         return velocidadeLancamento;
     }
+
+
+  
 
 }

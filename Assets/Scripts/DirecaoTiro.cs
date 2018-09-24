@@ -3,46 +3,44 @@ using System.Collections;
 
 public class DirecaoTiro : MonoBehaviour {
 
-    ArrastaBola bola;
-
-    SpriteRenderer desenharSeta;
-    float angulo;
+    SpriteRenderer desenhar;
+    float angulo = 0.000001f;
+    public float posX = 320.0f, posY, posAtual;
+    
 
     private void Awake()
     {
-       desenharSeta = GetComponent<SpriteRenderer>();
- 
+        desenhar = GetComponent<SpriteRenderer>();
     }
 
     void Start () {
 
-        bola = new ArrastaBola();
+        desenhar.enabled = true;
         
-
-        desenharSeta.enabled = false;
-        angulo = 90.0f;
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        
-        if(bola.toque == true) {
 
-            desenharSeta.enabled = true;
-            angulo++;
-            this.transform.Rotate(this.transform.position, angulo);
-        }
+        Direcao();
 
-	}
-    private void OnMouseDown()
-    {
-        bola.toque= true;
-        
+
     }
-    private void OnMouseUp()
+    
+    void Direcao()
     {
-        bola.toque = false;
 
+        posY++;
+        Vector3 posicao = new Vector3(posX, posY);
+        transform.position = posicao;
+
+        if (posY == 170 || posY == -170)
+        {
+            
+            posY *= -1;
+            
+        }
+        
     }
 
     
