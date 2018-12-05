@@ -33,8 +33,10 @@ public class Atirar : MonoBehaviour
     public void Disparar()
     {
 
-        rbBola.velocity = new Vector2(meuScriptSeta.rbSeta.transform.position.x, meuScriptSeta.rbSeta.transform.position.y);
+        rbBola.AddForce(new Vector2(meuScriptSeta.rbSeta.transform.position.x, meuScriptSeta.rbSeta.transform.position.y) 
+            * (meuScriptBola.valorVelocidadeLancamento()), ForceMode2D.Impulse);
 
+        Debug.Log("Atirou!");
 
     }
 

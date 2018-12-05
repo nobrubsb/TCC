@@ -36,7 +36,7 @@ public class ArrastaBola : MonoBehaviour
         forcaMaxima = 1.0f;
         incremento = 0.01f;
         forcaAtual = 0.0f;
-        velocidadeMaxima = 100.00f;
+        velocidadeMaxima = 50.00f;
 
 
     }
@@ -84,8 +84,5 @@ public class ArrastaBola : MonoBehaviour
         float velocidadeLancamento = forcaAtual * velocidadeMaxima; ;
         return velocidadeLancamento;
     }
-
-
-
 
 }
